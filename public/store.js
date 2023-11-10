@@ -25,7 +25,11 @@ function ready() {
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
-
+const stripeHandler = StripeCheckout.configure({
+    key: stripePublicKey,
+    locale: 'en',
+    token: ()=>{}
+})
 function purchaseClicked() {
     alert('Thank you for your purchase')
     var cartItems = document.getElementsByClassName('cart-items')[0]
